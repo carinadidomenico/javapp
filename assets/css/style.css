@@ -121,10 +121,12 @@ box-shadow: 2px 10px 22px 0px rgba(80, 80, 80);
 }
 
 .caixa1, p{
-  color: white
+  color: white;
   align-items: center;
   justify-content: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: justify;
 }
 
 
@@ -138,6 +140,10 @@ box-shadow: 2px 10px 22px 0px rgba(80, 80, 80);
   width: 1150px;
   height: 150px;
   justify-content: space-around;
+}
+
+.caixa-texto p{
+  font-size: 1.6rem;
 }
 
 .imagem-grafico{
@@ -169,6 +175,8 @@ box-shadow: 2px 10px 22px 0px rgba(80, 80, 80);
 
 .caixa-texto p{
   color: white;
+  text-align: center;
+  padding-top: 1.5%;
 }
 
 footer{
@@ -200,6 +208,10 @@ footer{
   height: 150px;
 
 
+  }
+
+  .caixa1 .texto-caixa1{
+    font-size: 0.8rem;
   }
 
   .texto{
