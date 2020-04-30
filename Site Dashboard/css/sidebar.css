@@ -32,6 +32,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
 }
 
 /* .sidebar--logo {
@@ -67,4 +68,121 @@ html {
 
 .active {
     background-color: var(--secundary-color);
+}
+/* 
+#graficos_y{
+    display: none; 
+} */
+
+
+/* .main.container#chart_div{
+    align-items: center;
+    height: 500px;
+} */
+
+
+#modal{
+    background: #413EC8;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    top : 0;
+    transition: 400ms;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 16px;
+}
+
+#modal.addScroll{
+    overflow: auto;
+}
+
+#modal .content{
+    margin: auto auto;
+    color: white;
+}
+
+#modal .content h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#modal form{
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5){
+    grid-column: span 2;
+}
+
+
+form input, form textarea{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid rgba(141, 25,52, 0.5);
+    outline: none;
+    font-size: 16px;
+}
+
+form a{
+    background: #ffffff22;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    align-self: end;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 400ms;
+}
+
+form a:hover{
+    background: #fff;
+    text-decoration: none;
+    color: #413EC8;
+}
+
+form label{
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+}
+
+form button{
+    background: #fff;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 32px;
+    grid-column: 2;
+    justify-self: end;
+    transition: 400ms;
+    font-family: 'Montserrat';
+    font-weight: 800;
+}
+
+form button:hover{
+    background: #413EC8;
+    color: white;
+    text-decoration: none;
+}
+
+#modal.hide{
+    opacity: 0;
+    visibility: hidden;
 }

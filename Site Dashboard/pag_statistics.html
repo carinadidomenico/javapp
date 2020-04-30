@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            margin-top: 20px;
+            margin-left: 24vw;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['table'] });
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            var i = 0;
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Retorno');
+            data.addColumn('number', 'Quantidade');
+            data.addRows([
+                ['200 (OK)', 20],
+                ['400 (Bad Request)', 3],
+                ['401 (Unauthorized)', 5],
+                ['403 (Forbidden)', 3],
+                ['404 (Not Found)', 4],
+                ['500 (Internal Server Error)', 7]
+            ]);
+
+            var table = new google.visualization.Table(document.getElementById('table_div'));
+
+            setInterval(function () {
+                data.setValue(0, 1, Math.round(100 * Math.random()));
+                table.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(1, 1, Math.round(30 * Math.random()));
+                table.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(2, 1, Math.round(30 * Math.random()));
+                table.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(3, 1, Math.round(30 * Math.random()));
+                table.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(4, 1, Math.round(30 * Math.random()));
+                table.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(5, 1, Math.round(30 * Math.random()));
+                table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
+            }, 5000);
+
+            // table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Retorno', 'Quantidade'],
+                ['200 (OK)', 20],
+                ['400 (Bad Request)', 3],
+                ['401 (Unauthorized)', 5],
+                ['403 (Forbidden)', 3],
+                ['404 (Not Found)', 4],
+                ['500 (Internal Server Error)', 7]
+            ]);
+
+            var options = {
+                title: 'APIs - Status HTTP'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            // chart.draw(data, options);
+
+            setInterval(function () {
+                data.setValue(0, 1, Math.round(100 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(1, 1, Math.round(30 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(2, 1, Math.round(30 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(3, 1, Math.round(30 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(4, 1, Math.round(30 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+            setInterval(function () {
+                data.setValue(5, 1, Math.round(30 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+        }
+    </script>
     <title>MOSS</title>
 
-    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
 </head>
+
 <body>
     <div class="main">
 
@@ -22,9 +129,11 @@
         </div>
 
         <div class="container">
-            
+            <div id="piechart" style="width: 640px; height: 240px;"></div>
+            <div id="table_div"></div>
         </div>
 
     </div>
 </body>
+
 </html>
