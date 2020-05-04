@@ -32,29 +32,29 @@
             var table = new google.visualization.Table(document.getElementById('table_div'));
 
             setInterval(function () {
-                data.setValue(0, 1, Math.round(100 * Math.random()));
+                data.setValue(0, 1, Math.round(100 * Math.random() + 50));
                 table.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(1, 1, Math.round(30 * Math.random()));
                 table.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(2, 1, Math.round(30 * Math.random()));
                 table.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(3, 1, Math.round(30 * Math.random()));
                 table.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(4, 1, Math.round(30 * Math.random()));
                 table.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(5, 1, Math.round(30 * Math.random()));
                 table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
-            }, 5000);
+            }, 2000);
 
             // table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
         }
@@ -76,7 +76,15 @@
             ]);
 
             var options = {
-                title: 'APIs - Status HTTP'
+                title: 'APIs - Status HTTP',
+                slices: {
+                    0: { color: '#00FF55' },
+                    1: { color: '#FFFF44' },
+                    2: { color: '#FF9933' },
+                    3: { color: '#FF00FF' },
+                    4: { color: '#FF0000' },
+                    5: { color: '#0000FF' },
+                }
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -84,29 +92,29 @@
             // chart.draw(data, options);
 
             setInterval(function () {
-                data.setValue(0, 1, Math.round(100 * Math.random()));
+                data.setValue(0, 1, Math.round(100 * Math.random() + 50));
                 chart.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(1, 1, Math.round(30 * Math.random()));
                 chart.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(2, 1, Math.round(30 * Math.random()));
                 chart.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(3, 1, Math.round(30 * Math.random()));
                 chart.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(4, 1, Math.round(30 * Math.random()));
                 chart.draw(data, options);
-            }, 5000);
+            }, 2000);
             setInterval(function () {
                 data.setValue(5, 1, Math.round(30 * Math.random()));
                 chart.draw(data, options);
-            }, 5000);
+            }, 2000);
         }
     </script>
     <title>MOSS</title>

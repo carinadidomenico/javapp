@@ -5,7 +5,7 @@ function drawLineChart() {
 
     var data = google.visualization.arrayToDataTable([
         ['Tempo(min)', 'Status'],
-        [ 0, 0]
+        [0, 0]
     ]);
 
     var options = {
@@ -18,21 +18,30 @@ function drawLineChart() {
         },
         vAxis: {
             title: 'Status',
-            
             maxValue: 1
-        }
+        },
+        curveType: 'function'
     }
 
     var chart = new google.visualization.AreaChart(document.getElementById('chart'));
 
     var index = 0;
 
+
+    // if (index > 10) {
+    //     data.splice(index - 10, 1)
+    // } else {
     setInterval(() => {
         var random = Math.round(Math.random());
+        
         data.addRow([index, random]);
         chart.draw(data, options);
         index++;
+
     }, 1000)
+    // }
+
+
 
 
 
@@ -78,7 +87,7 @@ function mostrarY() {
     document.getElementById("graficos_y").style.display = "block";
     document.getElementById("graficos_x").style.display = "none";
 }
-function mostrarTodos(){
+function mostrarTodos() {
     document.getElementById("graficos_y").style.display = "block";
     document.getElementById("graficos_x").style.display = "block";
 }
@@ -220,7 +229,7 @@ function drawGaugeChart() {
     };
 
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-    
+
     // chart.draw(data, options);
 
     setInterval(function () {
@@ -563,7 +572,7 @@ function mostrar3() {
     document.getElementById("charts2").style.display = "none";
     document.getElementById("charts3").style.display = "block";
 }
-function mostrarTodas(){
+function mostrarTodas() {
     document.getElementById("charts").style.display = "block";
     document.getElementById("charts2").style.display = "block";
     document.getElementById("charts3").style.display = "block";
