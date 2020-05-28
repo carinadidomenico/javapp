@@ -27,6 +27,7 @@ import oshi.software.os.OperatingSystem.ProcessSort;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.software.os.OperatingSystem;
 import oshi.software.os.OSProcess;
+import Log.TXT.Log;
 
 /**
  *
@@ -48,6 +49,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        Log.writeLog("Iniciando Monitoramento de Dados...");
         
         setColor(btn_3);
         ind_3.setOpaque(true);
@@ -346,8 +348,6 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         side_pane.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 140, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PICHAU\\Documents\\NetBeansProjects\\Projeto_MOSS\\src\\main\\java\\MOSS.png")); // NOI18N
         side_pane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         jPanel1.add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 600));
@@ -743,6 +743,7 @@ public class Dashboard extends javax.swing.JFrame {
         ind_4.setOpaque(true);
         resetColor(new JPanel[]{btn_2,btn_3}, new JPanel[]{ind_2,ind_3});
         panelsVisibility(3);
+        Log.writeLog("Iniciando a aba Processos");
     }//GEN-LAST:event_jLabel11MousePressed
 
     /**

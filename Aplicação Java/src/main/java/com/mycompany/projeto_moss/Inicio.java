@@ -6,7 +6,8 @@
 package com.mycompany.projeto_moss;
 
 import java.awt.Rectangle;
-
+import Log.TXT.Log;
+        
 /**
  *
  * @author PICHAU
@@ -21,7 +22,9 @@ public class Inicio extends javax.swing.JFrame {
      * Creates new form Inicio
      */
     public Inicio() {
+      
         initComponents();
+        Log.writeLog("Login Realizado com Sucesso");    
     }
 
     /**
