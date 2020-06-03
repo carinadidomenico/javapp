@@ -21,7 +21,7 @@ public class Log {
     
     private static void verifyExistence(File arquivo) {
        
-    File directory = new File ("C:/Moss");
+    File directory = new File ("./temp");
     boolean drExists = directory.exists();
     boolean arqExists = arquivo.exists();
  
@@ -39,8 +39,8 @@ public class Log {
         arquivo.createNewFile();
     }
     
-    }catch (IOException erro){
-        System.out.println("Erro 01!");
+    }catch (IOException erro1){
+      System.out.println("Erro na Classe Log: " + erro1.getMessage());
     }
      
    }
@@ -48,7 +48,7 @@ public class Log {
 public static void writeLog(String Message) {
     
     try{
-        File arquivo = new File("C://Moss/File1.txt");
+        File arquivo = new File("./temp/Moss.txt");
        
         Format formater = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date data = new Date();
@@ -66,9 +66,8 @@ public static void writeLog(String Message) {
         bufferedWriter.close();
         fileWriter.close();
      
-    }catch (IOException error){
-        System.out.println("Erro 02!");
-        
+    }catch (IOException erro2){
+        System.out.println(erro2.getMessage());
     }
 }
 
