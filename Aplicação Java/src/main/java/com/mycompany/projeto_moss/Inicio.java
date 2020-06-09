@@ -24,7 +24,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
       
         initComponents();
-        Log.writeLog("Login Realizado com Sucesso");    
+        Log.writeLog("Iniciando tela de Login ");    
     }
 
     /**
@@ -170,6 +170,8 @@ public class Inicio extends javax.swing.JFrame {
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
         inicio.setVisible(false);
         new Dashboard().setVisible(true);
+      Log.writeLog("Login Realizado com Sucesso ");
+        
     }//GEN-LAST:event_btn_entrarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

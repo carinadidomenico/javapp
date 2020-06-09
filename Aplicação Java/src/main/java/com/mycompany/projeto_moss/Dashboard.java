@@ -109,13 +109,19 @@ public class Dashboard extends javax.swing.JFrame {
         Connection con = new Connection();
         JdbcTemplate template = new JdbcTemplate(con.getDataSource());
         java.util.Timer timer = new java.util.Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-                template.update("INSERT INTO LEITURA (ORIGEM,VALOR,DATA_HORA) VALUES (?,?,?)", "Disco", (Long.toString(hal.getMemory().getAvailable()).substring(0, 4)), LocalDateTime.now());
-                List todasOcorrencias = template.queryForList("SELECT * FROM LEITURA;");
+        //inserts no banco de dados 
+        Log.writeLog("Inserindo Dados Fixos da maquina no banco de Dados");
+         template.update("INSERT INTO MAQUINAFIXOS (memoriaTotal,sistemaOperacional,processador) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),(os.getFamily()), (hal.getProcessor().getName()));
+                List todasOcorrencias = template.queryForList("SELECT *FROM MAQUINAFIXOS ;");
                 System.out.println(todasOcorrencias);
-            }
-        }, delay, interval);
+                //inserts com timer 
+//        timer.scheduleAtFixedRate(new TimerTask() {
+//            public void run() { //DadosMonitoracao
+//                template.update("INSERT INTO DADOSMONITORACAO (cpu,disco,memoriaUso ) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),, (Long.toString(hal.getMemory().getAvailable()).substring(0, 4)));
+//                List todasOcorrencias = template.queryForList("SELECT *FROM DADOSMONITORACAO ;");
+//                System.out.println(todasOcorrencias);
+//            }
+//        }, delay, interval);
     }
 
     /**
@@ -752,6 +758,7 @@ public class Dashboard extends javax.swing.JFrame {
         ind_2.setOpaque(true);
         resetColor(new JPanel[]{btn_3, btn_4}, new JPanel[]{ind_3, ind_4});
         panelsVisibility(4);
+        Log.writeLog("Iniciando a aba Recursos");
     }//GEN-LAST:event_jLabel9MousePressed
 
     private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
