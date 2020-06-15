@@ -32,6 +32,11 @@ import Log.TXT.Log;
 import java.time.LocalDateTime;
 import java.util.TimerTask;
 import org.springframework.jdbc.core.JdbcTemplate;
+import oshi.hardware.GlobalMemory;
+import oshi.software.os.FileSystem;
+import oshi.software.os.OSFileStore;
+import oshi.util.FormatUtil;
+import oshi.util.Util;
 
 /**
  *
@@ -44,11 +49,20 @@ public class Dashboard extends javax.swing.JFrame {
     private static int posY;
     private static Dashboard dashboard;
     private static JFreeChart chart;
+    private static String informacoes = "";
+    private static String processos = "";
     private int delay = 0;
     private int interval = 60000;
+    private String so;
+    private String processador;
+    private String ramTotal;
+    private String ramDisp;
+    private String cpu;
+    private String disco;
 
     private SystemInfo si;
     private HardwareAbstractionLayer hal;
+    private OperatingSystem os ;
 
     /**
      * Creates new form Dashboard
@@ -62,7 +76,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         si = new SystemInfo();
         hal = si.getHardware();
-        OperatingSystem os = si.getOperatingSystem();
+        os = si.getOperatingSystem();
 
         // atribuindo informações do sistema operacional
         lbl_so.setText(os.getFamily());
@@ -105,6 +119,31 @@ public class Dashboard extends javax.swing.JFrame {
         jp_processos.setVisible(false);
         jp_recursos.setVisible(false);
         jp_hardware.setVisible(true);
+        //Monitorando 
+         this.so = (String.valueOf(os));   
+        
+        CentralProcessor cp = hal.getProcessor();
+        this.processador = cp.toString();
+        
+        GlobalMemory memory = hal.getMemory();
+        this.ramTotal = FormatUtil.formatBytes(memory.getTotal()) ;
+        long tot = memory.getTotal();
+        long disp = memory.getAvailable();
+        this.ramDisp = String.format("%.1f%%", 100 - (100d * disp/tot));
+            
+        long[] prevTicks = cp.getSystemCpuLoadTicks();
+        Util.sleep(2000);
+        this.cpu = String.format("%.1f%%", cp.getSystemCpuLoadBetweenTicks(prevTicks) * 100);
+        FileSystem fileSystem = os.getFileSystem();
+        OSFileStore[] fsArray = fileSystem.getFileStores();
+        String hdUsando = "";
+            for (OSFileStore fs : fsArray) {
+                long usable = fs.getUsableSpace();
+                long total = fs.getTotalSpace();
+                hdUsando = (String.format("%.1f%% em uso",
+                        100 - (100d * usable / total)));
+            }
+        this.disco = hdUsando;
         //armazenando informações no Banco 
         Connection con = new Connection();
         JdbcTemplate template = new JdbcTemplate(con.getDataSource());
@@ -123,7 +162,72 @@ public class Dashboard extends javax.swing.JFrame {
 //            }
 //        }, delay, interval);
     }
+        public String getSo() {
+        return so;
+    }
 
+
+    public String getProcesso() {
+        return processador;
+    }
+
+
+    public String getRamTotal() {
+        return ramTotal;
+    }
+      public String getRamDisp() {
+        return ramDisp;
+    }
+
+
+    public String getCpu() {
+        return cpu;
+    }
+    
+    public String getDisco(){
+        return disco;
+    }
+ public String runPid(){
+        listarProcessos(os, hal.getMemory()); 
+        return informacoes;
+    }
+ public String runThread(){
+        contarProcessos(os, hal.getMemory());
+        return processos;
+    }
+  private static void listarProcessos(OperatingSystem os, GlobalMemory memory) {
+        
+        List<OSProcess> procs = Arrays.asList(os.getProcesses(20, OperatingSystem.ProcessSort.CPU));
+
+        for (int i = 0; i < procs.size() && i < 20; i++) {
+            OSProcess p = procs.get(i);
+            informacoes +=(String.format("%5d              %5.1f                 %4.1f              %9s             %9s                 %s", p.getProcessID(),
+                    100d * (p.getKernelTime() + p.getUserTime()) / p.getUpTime(),
+                    100d * p.getResidentSetSize() / memory.getTotal(), FormatUtil.formatBytes(p.getVirtualSize()),
+                    FormatUtil.formatBytes(p.getResidentSetSize()), p.getName()));
+            informacoes +="\n";
+        }
+        informacoes +=("\n");
+    }
+    
+    
+    private static void contarProcessos (OperatingSystem os, GlobalMemory memory) {
+        processos += ("\n Processos: " + os.getProcessCount() + ",      Threads: " + os.getThreadCount());
+    }
+     public void checarComponentes(Dashboard att){
+        Double cpu = Double.valueOf(att.getCpu().substring(0,3).replaceAll(",","."));
+        Double ram = Double.valueOf(att.getRamDisp().substring(0,4).replaceAll(",","."));
+        Double disco = Double.valueOf(att.getDisco().substring(0,3).replaceAll(",","."));
+        
+        if(cpu >= 80){
+            
+        }
+        
+            
+    }
+    
+    
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
