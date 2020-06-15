@@ -5,6 +5,7 @@
  */
 package com.mycompany.projeto_moss;
 
+import Banco.JDBC.Connection;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -28,6 +29,9 @@ import oshi.hardware.HardwareAbstractionLayer;
 import oshi.software.os.OperatingSystem;
 import oshi.software.os.OSProcess;
 import Log.TXT.Log;
+import java.time.LocalDateTime;
+import java.util.TimerTask;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
@@ -37,68 +41,87 @@ public class Dashboard extends javax.swing.JFrame {
 
     private static Timer timer;
     private static int posX;
-    private static int posY ;
+    private static int posY;
     private static Dashboard dashboard;
-    private static JFreeChart chart; 
-    
+    private static JFreeChart chart;
+    private int delay = 0;
+    private int interval = 60000;
+
     private SystemInfo si;
     private HardwareAbstractionLayer hal;
-    
+
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
         Log.writeLog("Iniciando Monitoramento de Dados...");
-        
+
         setColor(btn_3);
         ind_3.setOpaque(true);
-        
+
         si = new SystemInfo();
         hal = si.getHardware();
         OperatingSystem os = si.getOperatingSystem();
-        
+
         // atribuindo informações do sistema operacional
         lbl_so.setText(os.getFamily());
         lbl_version.setText(os.getVersion().getVersion() + " build " + os.getVersion().getBuildNumber());
         lbl_arq.setText(os.getBitness() + " bits");
-        
+
         // atribuindo informações do processador
         lbl_processor.setText(hal.getProcessor().getName());
         lbl_family.setText(hal.getProcessor().getFamily());
         lbl_threads.setText(hal.getProcessor().getVendor());
-        lbl_freq.setText((hal.getProcessor().getMaxFreq() * 0.000000001) + " GHz"); 
-        
+        lbl_freq.setText((hal.getProcessor().getMaxFreq() * 0.000000001) + " GHz");
+
         // sensores de temperatura
         lbl_temp.setText(String.valueOf(hal.getSensors().getCpuTemperature()));
         lbl_volt.setText(String.valueOf(hal.getSensors().getCpuVoltage()));
         lbl_vel.setText(hal.getSensors().getFanSpeeds().length + "");
-        
+
         // informações da memória
         lbl_memDisp.setText(Long.toString(hal.getMemory().getAvailable()).substring(0, 4) + " MB");
         lbl_memPag.setText(hal.getMemory().getPageSize() + " MB");
         lbl_memTot.setText(Long.toString(hal.getMemory().getTotal()).substring(0, 4) + " MB");
         hal.getMemory().getPhysicalMemory();
         hal.getMemory().getVirtualMemory();
-        
+
         // informações do disco
         HWDiskStore[] discos = hal.getDiskStores();
         System.out.println(discos[0]);
-        System.out.println(discos[1]);
+
         for (int x = 0; x < discos.length; x++) {
             JLabel lbl_diskData = new javax.swing.JLabel();
-            
+
             lbl_diskData.setFont(new java.awt.Font("Segoe UI", 0, 12));
             lbl_diskData.setForeground(new java.awt.Color(255, 255, 255));
             lbl_diskData.setText(discos[x].getModel());
             jp_discos.add(lbl_diskData);
-            jp_discos.updateUI(); 
+            jp_discos.updateUI();
         }
-                
+
         // definindo visibilidade dos painéis
         jp_processos.setVisible(false);
         jp_recursos.setVisible(false);
         jp_hardware.setVisible(true);
+        //armazenando informações no Banco 
+        Connection con = new Connection();
+        JdbcTemplate template = new JdbcTemplate(con.getDataSource());
+        java.util.Timer timer = new java.util.Timer();
+        //inserts no banco de dados 
+        Log.writeLog("Inserindo Dados Fixos da maquina no banco de Dados");
+         template.update("INSERT INTO MAQUINAFIXOS (memoriaTotal,sistemaOperacional,processador) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),(os.getFamily()), (hal.getProcessor().getName()));
+                List todasOcorrencias = template.queryForList("SELECT *FROM MAQUINAFIXOS ;");
+                System.out.println(todasOcorrencias);
+                //inserts com timer 
+//        timer.scheduleAtFixedRate(new TimerTask() {
+//            public void run() { //DadosMonitoracao
+//                template.update("INSERT INTO DADOSMONITORACAO (cpu,disco,memoriaUso ) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),, (Long.toString(hal.getMemory().getAvailable()).substring(0, 4)));
+//                List todasOcorrencias = template.queryForList("SELECT *FROM DADOSMONITORACAO ;");
+//                System.out.println(todasOcorrencias);
+//            }
+//        }, delay, interval);
     }
 
     /**
@@ -703,7 +726,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_3);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_4}, new JPanel[]{ind_2, ind_4});
+        resetColor(new JPanel[]{btn_2, btn_4}, new JPanel[]{ind_2, ind_4});
         panelsVisibility(2);
     }//GEN-LAST:event_btn_3MousePressed
 
@@ -711,7 +734,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_4);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3}, new JPanel[]{ind_2,ind_3});
+        resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
         panelsVisibility(3);
     }//GEN-LAST:event_btn_4MousePressed
 
@@ -719,29 +742,30 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_3);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_4}, new JPanel[]{ind_2, ind_4});
+        resetColor(new JPanel[]{btn_2, btn_4}, new JPanel[]{ind_2, ind_4});
         panelsVisibility(2);
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
         setColor(btn_2);
         ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_3,btn_4}, new JPanel[]{ind_3, ind_4});
+        resetColor(new JPanel[]{btn_3, btn_4}, new JPanel[]{ind_3, ind_4});
         panelsVisibility(4);
     }//GEN-LAST:event_btn_2MouseClicked
 
     private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
         setColor(btn_2);
         ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_3,btn_4}, new JPanel[]{ind_3, ind_4});
+        resetColor(new JPanel[]{btn_3, btn_4}, new JPanel[]{ind_3, ind_4});
         panelsVisibility(4);
+        Log.writeLog("Iniciando a aba Recursos");
     }//GEN-LAST:event_jLabel9MousePressed
 
     private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
         // TODO add your handling code here:
         setColor(btn_4);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3}, new JPanel[]{ind_2,ind_3});
+        resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
         panelsVisibility(3);
         Log.writeLog("Iniciando a aba Processos");
     }//GEN-LAST:event_jLabel11MousePressed
@@ -755,9 +779,9 @@ public class Dashboard extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
+
         dashboard = new Dashboard();
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -784,21 +808,20 @@ public class Dashboard extends javax.swing.JFrame {
         });
     }
 
-    private void setColor(JPanel pane)
-    {
-        pane.setBackground(new Color(50,50,50));
+    private void setColor(JPanel pane) {
+        pane.setBackground(new Color(50, 50, 50));
     }
-    
-    private void resetColor(JPanel [] pane, JPanel [] indicators)
-    {
-        for(int i=0;i<pane.length;i++){
-           pane[i].setBackground(new Color(32,32,32));
-           
-        } for(int i=0;i<indicators.length;i++){
-           indicators[i].setOpaque(false);           
+
+    private void resetColor(JPanel[] pane, JPanel[] indicators) {
+        for (int i = 0; i < pane.length; i++) {
+            pane[i].setBackground(new Color(32, 32, 32));
+
+        }
+        for (int i = 0; i < indicators.length; i++) {
+            indicators[i].setOpaque(false);
         }
     }
-    
+
     private void panelsVisibility(int a) {
         if (a == 2) {
             jp_hardware.setVisible(true);
@@ -814,7 +837,7 @@ public class Dashboard extends javax.swing.JFrame {
             jp_processos.setVisible(false);
         }
     }
-        
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
