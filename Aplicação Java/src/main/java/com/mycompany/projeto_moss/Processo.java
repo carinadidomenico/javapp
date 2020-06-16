@@ -17,16 +17,17 @@ public class Processo {
 
     private Point point = new Point();
 
-    
-
     public static void main(String[] args) {
-         final long time = 1000;
+        int delay = 0;
+        int interval = 40000;
+
         Timer timer = new Timer();
-        TimerTask tarefa = new TimerTask() {
+        timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 try {
 
                     Dashboard att = new Dashboard();
+                    att.InsertDadosMonitoracao(att);
 
                     System.out.println(att.getSo());
                     System.out.println(att.getProcesso());
@@ -45,8 +46,7 @@ public class Processo {
                 }
 
             }
-        };
-        timer.scheduleAtFixedRate(tarefa, time, time);
+        }, delay, interval);
 
         Dashboard listar = new Dashboard();
         System.out.println(listar.runPid());

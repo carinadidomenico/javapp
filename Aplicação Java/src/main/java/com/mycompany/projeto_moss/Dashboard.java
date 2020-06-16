@@ -51,8 +51,7 @@ public class Dashboard extends javax.swing.JFrame {
     private static JFreeChart chart;
     private static String informacoes = "";
     private static String processos = "";
-    private int delay = 0;
-    private int interval = 60000;
+   
     private String so;
     private String processador;
     private String ramTotal;
@@ -63,11 +62,14 @@ public class Dashboard extends javax.swing.JFrame {
     private SystemInfo si;
     private HardwareAbstractionLayer hal;
     private OperatingSystem os ;
+    Connection con = new Connection();
+    JdbcTemplate template = new JdbcTemplate(con.getDataSource());
 
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
+        
         initComponents();
         Log.writeLog("Iniciando Monitoramento de Dados...");
 
@@ -119,6 +121,12 @@ public class Dashboard extends javax.swing.JFrame {
         jp_processos.setVisible(false);
         jp_recursos.setVisible(false);
         jp_hardware.setVisible(true);
+        //inserts no banco de dados 
+     Log.writeLog("Insert Dados Fixos");
+        Log.writeLog("Inserindo Dados Fixos da maquina no banco de Dados");
+        template.update("INSERT INTO MAQUINAFIXOS (memoriaTotal,sistemaOperacional,processador) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),(os.getFamily()), (hal.getProcessor().getName()));
+                List todasOcorrencias = template.queryForList("SELECT *FROM MAQUINAFIXOS ;");
+                System.out.println(todasOcorrencias);
         //Monitorando 
          this.so = (String.valueOf(os));   
         
@@ -143,24 +151,7 @@ public class Dashboard extends javax.swing.JFrame {
                 hdUsando = (String.format("%.1f%% em uso",
                         100 - (100d * usable / total)));
             }
-        this.disco = hdUsando;
-        //armazenando informações no Banco 
-        Connection con = new Connection();
-        JdbcTemplate template = new JdbcTemplate(con.getDataSource());
-        java.util.Timer timer = new java.util.Timer();
-        //inserts no banco de dados 
-        Log.writeLog("Inserindo Dados Fixos da maquina no banco de Dados");
-         template.update("INSERT INTO MAQUINAFIXOS (memoriaTotal,sistemaOperacional,processador) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),(os.getFamily()), (hal.getProcessor().getName()));
-                List todasOcorrencias = template.queryForList("SELECT *FROM MAQUINAFIXOS ;");
-                System.out.println(todasOcorrencias);
-                //inserts com timer 
-//        timer.scheduleAtFixedRate(new TimerTask() {
-//            public void run() { //DadosMonitoracao
-//                template.update("INSERT INTO DADOSMONITORACAO (cpu,disco,memoriaUso ) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),, (Long.toString(hal.getMemory().getAvailable()).substring(0, 4)));
-//                List todasOcorrencias = template.queryForList("SELECT *FROM DADOSMONITORACAO ;");
-//                System.out.println(todasOcorrencias);
-//            }
-//        }, delay, interval);
+        this.disco = hdUsando;     
     }
         public String getSo() {
         return so;
@@ -196,6 +187,7 @@ public class Dashboard extends javax.swing.JFrame {
         return processos;
     }
   private static void listarProcessos(OperatingSystem os, GlobalMemory memory) {
+      Log.writeLog("Listando Processos...");
         
         List<OSProcess> procs = Arrays.asList(os.getProcesses(20, OperatingSystem.ProcessSort.CPU));
 
@@ -206,6 +198,7 @@ public class Dashboard extends javax.swing.JFrame {
                     100d * p.getResidentSetSize() / memory.getTotal(), FormatUtil.formatBytes(p.getVirtualSize()),
                     FormatUtil.formatBytes(p.getResidentSetSize()), p.getName()));
             informacoes +="\n";
+           
         }
         informacoes +=("\n");
     }
@@ -215,6 +208,7 @@ public class Dashboard extends javax.swing.JFrame {
         processos += ("\n Processos: " + os.getProcessCount() + ",      Threads: " + os.getThreadCount());
     }
      public void checarComponentes(Dashboard att){
+         Log.writeLog("Checando componentes");
         Double cpu = Double.valueOf(att.getCpu().substring(0,3).replaceAll(",","."));
         Double ram = Double.valueOf(att.getRamDisp().substring(0,4).replaceAll(",","."));
         Double disco = Double.valueOf(att.getDisco().substring(0,3).replaceAll(",","."));
@@ -222,9 +216,16 @@ public class Dashboard extends javax.swing.JFrame {
         if(cpu >= 80){
             
         }
-        
-            
     }
+     public void InsertDadosMonitoracao(Dashboard att){
+         Log.writeLog("Insert Dados Monitoração");
+        Double cpu = Double.valueOf(att.getCpu().substring(0,3).replaceAll(",","."));
+        Double ram = Double.valueOf(att.getRamDisp().substring(0,4).replaceAll(",","."));
+        Double disco = Double.valueOf(att.getDisco().substring(0,3).replaceAll(",","."));
+        template.update("INSERT INTO DADOSMONITORACAO (cpu,disco,memoriaUso ) VALUES (?,?,?)",cpu,0,ram);
+        List todasOcorrencias = template.queryForList("SELECT *FROM DADOSMONITORACAO ;");
+               System.out.println(todasOcorrencias);
+     }
     
     
  
