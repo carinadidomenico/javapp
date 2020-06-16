@@ -19,14 +19,13 @@ public class Processo {
 
     public static void main(String[] args) {
         int delay = 0;
-        int interval = 40000;
+        int interval = 60000;
+        Dashboard att = new Dashboard();
 
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 try {
-
-                    Dashboard att = new Dashboard();
                     att.InsertDadosMonitoracao(att);
 
                     System.out.println(att.getSo());
@@ -53,11 +52,7 @@ public class Processo {
         System.out.println("===========");
         System.out.println(listar.runThread());
 
-//          java.awt.EventQueue.invokeLater(new Runnable() 
-//            public void run() {
-//                new Processo().setVisible(true);
-//            }
-//        });
+
     }
 
 }

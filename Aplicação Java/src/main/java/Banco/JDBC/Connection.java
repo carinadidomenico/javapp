@@ -14,13 +14,18 @@ public class Connection {
     private BasicDataSource dataSource;
 
     public Connection() {
-        
         Log.writeLog("Iniciando conexão com o Banco de Dados");
+        try {
+        Log.writeLog("Conectado Com o Banco De Dados");
         dataSource = new BasicDataSource();
         dataSource​.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource​.setUrl("jdbc:mysql://localhost:3306/teste?useTimezone=true&serverTimezone=UTC");  
         dataSource​.setUsername("root");
         dataSource​.setPassword("bandtec");
+        } catch (Exception e) {
+            Log.writeLog("Falha na Conexão com o Banco de Dados.");
+        }
+       
         
     }
 
