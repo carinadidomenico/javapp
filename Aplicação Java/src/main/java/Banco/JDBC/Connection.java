@@ -21,7 +21,7 @@ public class Connection {
         dataSource​.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource​.setUrl("jdbc:mysql://localhost:3306/teste?useTimezone=true&serverTimezone=UTC");  
         dataSource​.setUsername("root");
-        dataSource​.setPassword("bandtec");
+        dataSource​.setPassword("bchj130395");
         } catch (Exception e) {
             Log.writeLog("Falha na Conexão com o Banco de Dados.");
         }

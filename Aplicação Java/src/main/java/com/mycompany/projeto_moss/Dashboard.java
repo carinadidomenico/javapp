@@ -51,7 +51,7 @@ public class Dashboard extends javax.swing.JFrame {
     private static JFreeChart chart;
     private static String informacoes = "";
     private static String processos = "";
-   
+
     private String so;
     private String processador;
     private String ramTotal;
@@ -61,7 +61,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private SystemInfo si;
     private HardwareAbstractionLayer hal;
-    private OperatingSystem os ;
+    private OperatingSystem os;
     Connection con = new Connection();
     JdbcTemplate template = new JdbcTemplate(con.getDataSource());
 
@@ -69,7 +69,7 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form Dashboard
      */
     public Dashboard() {
-        
+
         initComponents();
         Log.writeLog("Iniciando Monitoramento de Dados...");
 
@@ -117,118 +117,125 @@ public class Dashboard extends javax.swing.JFrame {
             jp_discos.updateUI();
         }
 
+        // informações página Processos
+//        Dashboard att = new Dashboard();
+//        lblLabelProcessos.setText(att.getProcesso());
+
         // definindo visibilidade dos painéis
         jp_processos.setVisible(false);
         jp_recursos.setVisible(false);
         jp_hardware.setVisible(true);
         //inserts no banco de dados 
-     Log.writeLog("Insert Dados Fixos");
+        Log.writeLog("Insert Dados Fixos");
         Log.writeLog("Inserindo Dados Fixos da maquina no banco de Dados");
-        template.update("INSERT INTO MAQUINAFIXOS (memoriaTotal,sistemaOperacional,processador) VALUES (?,?,?)",(Long.toString(hal.getMemory().getTotal()).substring(0, 4)),(os.getFamily()), (hal.getProcessor().getName()));
-                List todasOcorrencias = template.queryForList("SELECT *FROM MAQUINAFIXOS ;");
-                System.out.println(todasOcorrencias);
+        template.update("INSERT INTO MAQUINAFIXOS (memoriaTotal,sistemaOperacional,processador) VALUES (?,?,?)", (Long.toString(hal.getMemory().getTotal()).substring(0, 4)), (os.getFamily()), (hal.getProcessor().getName()));
+        List todasOcorrencias = template.queryForList("SELECT *FROM MAQUINAFIXOS ;");
+        System.out.println(todasOcorrencias);
         //Monitorando 
-         this.so = (String.valueOf(os));   
-        
+        this.so = (String.valueOf(os));
+
         CentralProcessor cp = hal.getProcessor();
         this.processador = cp.toString();
-        
+
         GlobalMemory memory = hal.getMemory();
-        this.ramTotal = FormatUtil.formatBytes(memory.getTotal()) ;
+        this.ramTotal = FormatUtil.formatBytes(memory.getTotal());
         long tot = memory.getTotal();
         long disp = memory.getAvailable();
-        this.ramDisp = String.format("%.1f%%", 100 - (100d * disp/tot));
-            
+        this.ramDisp = String.format("%.1f%%", 100 - (100d * disp / tot));
+
         long[] prevTicks = cp.getSystemCpuLoadTicks();
         Util.sleep(2000);
         this.cpu = String.format("%.1f%%", cp.getSystemCpuLoadBetweenTicks(prevTicks) * 100);
         FileSystem fileSystem = os.getFileSystem();
         OSFileStore[] fsArray = fileSystem.getFileStores();
         String hdUsando = "";
-            for (OSFileStore fs : fsArray) {
-                long usable = fs.getUsableSpace();
-                long total = fs.getTotalSpace();
-                hdUsando = (String.format("%.1f%% em uso",
-                        100 - (100d * usable / total)));
-            }
-        this.disco = hdUsando;     
-    }
-        public String getSo() {
-        return so;
+        for (OSFileStore fs : fsArray) {
+            long usable = fs.getUsableSpace();
+            long total = fs.getTotalSpace();
+            hdUsando = (String.format("%.1f%%",
+                    100 - (100d * usable / total)));
+        }
+        this.disco = hdUsando;
     }
 
+    public String getSo() {
+        return so;
+    }
 
     public String getProcesso() {
         return processador;
     }
 
-
     public String getRamTotal() {
         return ramTotal;
     }
-      public String getRamDisp() {
+
+    public String getRamDisp() {
         return ramDisp;
     }
-
 
     public String getCpu() {
         return cpu;
     }
-    
-    public String getDisco(){
+
+    public String getDisco() {
         return disco;
     }
- public String runPid(){
-        listarProcessos(os, hal.getMemory()); 
+
+    public String runPid() {
+        listarProcessos(os, hal.getMemory());
         return informacoes;
     }
- public String runThread(){
+
+    public String runThread() {
         contarProcessos(os, hal.getMemory());
         return processos;
     }
-  private static void listarProcessos(OperatingSystem os, GlobalMemory memory) {
-      Log.writeLog("Listando Processos...");
-        
+
+    private static void listarProcessos(OperatingSystem os, GlobalMemory memory) {
+        Log.writeLog("Listando Processos...");
+
         List<OSProcess> procs = Arrays.asList(os.getProcesses(20, OperatingSystem.ProcessSort.CPU));
 
         for (int i = 0; i < procs.size() && i < 20; i++) {
             OSProcess p = procs.get(i);
-            informacoes +=(String.format("%5d              %5.1f                 %4.1f              %9s             %9s                 %s", p.getProcessID(),
+            informacoes += (String.format("%5d              %5.1f                 %4.1f              %9s             %9s                 %s", p.getProcessID(),
                     100d * (p.getKernelTime() + p.getUserTime()) / p.getUpTime(),
                     100d * p.getResidentSetSize() / memory.getTotal(), FormatUtil.formatBytes(p.getVirtualSize()),
                     FormatUtil.formatBytes(p.getResidentSetSize()), p.getName()));
-            informacoes +="\n";
-           
+            informacoes += "\n";
+
         }
-        informacoes +=("\n");
+        informacoes += ("\n");
     }
-    
-    
-    private static void contarProcessos (OperatingSystem os, GlobalMemory memory) {
+
+    private static void contarProcessos(OperatingSystem os, GlobalMemory memory) {
         processos += ("\n Processos: " + os.getProcessCount() + ",      Threads: " + os.getThreadCount());
     }
-     public void checarComponentes(Dashboard att){
-         Log.writeLog("Checando componentes");
-        Double cpu = Double.valueOf(att.getCpu().substring(0,3).replaceAll(",","."));
-        Double ram = Double.valueOf(att.getRamDisp().substring(0,4).replaceAll(",","."));
-        Double disco = Double.valueOf(att.getDisco().substring(0,3).replaceAll(",","."));
-        
-        if(cpu >= 80){
-            
+
+    public void checarComponentes(Dashboard att) {
+        Log.writeLog("Checando componentes");
+        Double cpu = Double.valueOf(att.getCpu().substring(0, 3).replaceAll(",", "."));
+        Double ram = Double.valueOf(att.getRamDisp().substring(0, 4).replaceAll(",", "."));
+        Double disco = Double.valueOf(att.getDisco().substring(0, 3).replaceAll(",", "."));
+
+        if (cpu >= 80) {
+
         }
     }
-     public void InsertDadosMonitoracao(Dashboard att){
-         Log.writeLog("Insert Dados Monitoração");
-        Double cpu = Double.valueOf(att.getCpu().substring(0,3).replaceAll(",","."));
-        Double ram = Double.valueOf(att.getRamDisp().substring(0,4).replaceAll(",","."));
-        Double disco = Double.valueOf(att.getDisco().substring(0,3).replaceAll(",","."));
-        template.update("INSERT INTO DADOSMONITORACAO (cpu,disco,memoriaUso ) VALUES (?,?,?)",cpu,0,ram);
+
+    public void InsertDadosMonitoracao(Dashboard att) {
+        Log.writeLog("Insert Dados Monitoração");
+        Double cpu = Double.valueOf(att.getCpu().substring(0, 3).replaceAll(",", "."));
+        Double ram = Double.valueOf(att.getRamDisp().substring(0, 4).replaceAll(",", "."));
+        Double disco = Double.valueOf(att.getDisco().substring(0, 3).replaceAll(",", "."));
+        template.update("INSERT INTO DADOSMONITORACAO (cpu,disco,memoriaUso ) VALUES (?,?,?)", cpu, 0, ram);
         List todasOcorrencias = template.queryForList("SELECT *FROM DADOSMONITORACAO ;");
-               System.out.println(todasOcorrencias);
-     }
+        System.out.println(todasOcorrencias);
+    }
     
     
- 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -240,9 +247,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         side_pane = new javax.swing.JPanel();
-        btn_2 = new javax.swing.JPanel();
-        ind_2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         btn_3 = new javax.swing.JPanel();
         ind_3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -250,6 +254,17 @@ public class Dashboard extends javax.swing.JFrame {
         ind_4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jp_processos = new javax.swing.JPanel();
+        lblProcessos = new javax.swing.JLabel();
+        lblLabelProcessos = new javax.swing.JLabel();
+        lblUsoCpu = new javax.swing.JLabel();
+        lblUsoMemoria = new javax.swing.JLabel();
+        lblMemoria = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        lblDisco = new javax.swing.JLabel();
+        pgbCpu = new javax.swing.JProgressBar();
+        pgbDisco = new javax.swing.JProgressBar();
+        pgbRam = new javax.swing.JProgressBar();
         jp_hardware = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -286,12 +301,10 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         lbl_memPag = new javax.swing.JLabel();
         jp_discos = new javax.swing.JPanel();
-        jp_processos = new javax.swing.JPanel();
         jp_recursos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(32, 32, 32));
-        setPreferredSize(new java.awt.Dimension(1150, 600));
         setResizable(false);
         addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
@@ -314,62 +327,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         side_pane.setBackground(new java.awt.Color(32, 32, 32));
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_2.setBackground(new java.awt.Color(32, 32, 32));
-        btn_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_2MouseClicked(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btn_2MouseReleased(evt);
-            }
-        });
-
-        ind_2.setOpaque(false);
-        ind_2.setPreferredSize(new java.awt.Dimension(3, 43));
-
-        javax.swing.GroupLayout ind_2Layout = new javax.swing.GroupLayout(ind_2);
-        ind_2.setLayout(ind_2Layout);
-        ind_2Layout.setHorizontalGroup(
-            ind_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 3, Short.MAX_VALUE)
-        );
-        ind_2Layout.setVerticalGroup(
-            ind_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
-        );
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Recursos");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel9MousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
-        btn_2.setLayout(btn_2Layout);
-        btn_2Layout.setHorizontalGroup(
-            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_2Layout.createSequentialGroup()
-                .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabel9)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-        btn_2Layout.setVerticalGroup(
-            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_2Layout.createSequentialGroup()
-                .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btn_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, -1));
 
         btn_3.setBackground(new java.awt.Color(32, 32, 32));
         btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -479,6 +436,91 @@ public class Dashboard extends javax.swing.JFrame {
         side_pane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         jPanel1.add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 600));
+
+        jp_processos.setBackground(new java.awt.Color(40, 40, 40));
+
+        lblLabelProcessos.setFont(new java.awt.Font("Lucida Grande", 0, 30)); // NOI18N
+        lblLabelProcessos.setForeground(new java.awt.Color(255, 255, 255));
+        lblLabelProcessos.setText("Teste");
+
+        lblUsoCpu.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        lblUsoCpu.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsoCpu.setText("CPU em Uso");
+
+        lblUsoMemoria.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        lblUsoMemoria.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsoMemoria.setText("RAM em Uso");
+
+        lblMemoria.setFont(new java.awt.Font("Lucida Grande", 0, 30)); // NOI18N
+        lblMemoria.setForeground(new java.awt.Color(255, 255, 255));
+        lblMemoria.setText("Teste");
+
+        jLabel22.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Disco em Uso");
+
+        lblDisco.setFont(new java.awt.Font("Lucida Grande", 0, 30)); // NOI18N
+        lblDisco.setForeground(new java.awt.Color(255, 255, 255));
+        lblDisco.setText("Teste");
+
+        pgbCpu.setString("");
+        pgbCpu.setStringPainted(true);
+
+        javax.swing.GroupLayout jp_processosLayout = new javax.swing.GroupLayout(jp_processos);
+        jp_processos.setLayout(jp_processosLayout);
+        jp_processosLayout.setHorizontalGroup(
+            jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_processosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_processosLayout.createSequentialGroup()
+                        .addComponent(lblUsoMemoria)
+                        .addGap(34, 34, 34)
+                        .addComponent(lblMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pgbCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pgbRam, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jp_processosLayout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pgbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jp_processosLayout.createSequentialGroup()
+                        .addComponent(lblUsoCpu)
+                        .addGap(44, 44, 44)
+                        .addComponent(lblLabelProcessos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblProcessos, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jp_processosLayout.setVerticalGroup(
+            jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_processosLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(lblProcessos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_processosLayout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addGroup(jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsoCpu)
+                    .addComponent(lblLabelProcessos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addComponent(pgbCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pgbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsoMemoria)
+                    .addComponent(lblMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(pgbRam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+        );
+
+        jPanel1.add(jp_processos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 1180, 600));
 
         jp_hardware.setBackground(new java.awt.Color(40, 40, 40));
 
@@ -763,21 +805,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.add(jp_hardware, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 1180, 600));
 
-        jp_processos.setBackground(new java.awt.Color(40, 40, 40));
-
-        javax.swing.GroupLayout jp_processosLayout = new javax.swing.GroupLayout(jp_processos);
-        jp_processos.setLayout(jp_processosLayout);
-        jp_processosLayout.setHorizontalGroup(
-            jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1180, Short.MAX_VALUE)
-        );
-        jp_processosLayout.setVerticalGroup(
-            jp_processosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jp_processos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 1180, 600));
-
         jp_recursos.setBackground(new java.awt.Color(40, 40, 40));
 
         javax.swing.GroupLayout jp_recursosLayout = new javax.swing.GroupLayout(jp_recursos);
@@ -823,10 +850,6 @@ public class Dashboard extends javax.swing.JFrame {
 //        dashboard.setBounds(evt.getXOnScreen() - posX, evt.getYOnScreen() - posY, rectangle.width, rectangle.height);
     }//GEN-LAST:event_formMouseDragged
 
-    private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_2MouseReleased
-
     private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
         // TODO add your handling code here:
         setColor(btn_3);
@@ -851,21 +874,6 @@ public class Dashboard extends javax.swing.JFrame {
         panelsVisibility(2);
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
-        setColor(btn_2);
-        ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_3, btn_4}, new JPanel[]{ind_3, ind_4});
-        panelsVisibility(4);
-    }//GEN-LAST:event_btn_2MouseClicked
-
-    private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
-        setColor(btn_2);
-        ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_3, btn_4}, new JPanel[]{ind_3, ind_4});
-        panelsVisibility(4);
-        Log.writeLog("Iniciando a aba Recursos");
-    }//GEN-LAST:event_jLabel9MousePressed
-
     private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
         // TODO add your handling code here:
         setColor(btn_4);
@@ -873,8 +881,52 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
         panelsVisibility(3);
         Log.writeLog("Iniciando a aba Processos");
+        Dashboard att = new Dashboard();
+        Long cpuTotal = hal.getProcessor().getMaxFreq();
+//        lblUsoCpuTotal.setText(Long.toString(cpuTotal).substring(0,2) + " Ghz");
+        lblLabelProcessos.setText(att.getCpu());
+        lblDisco.setText(att.getDisco());
+//        lblPainelProcessos.setText(att.runPid());
+        Double memTotal = (hal.getMemory().getTotal()) * 0.00001;
+        Double memDisp = (hal.getMemory().getAvailable()) * 0.00001;
+        Double memUso = memTotal - memDisp;
+        lblMemoria.setText(att.getRamDisp());
+//        lblProcessoMemTotal.setText(Double.toString(memTotal).substring(0,4) + " MB");
+//        lblProcMemUso.setText(Double.toString(memUso).substring(0,4) + " MB");
+        CentralProcessor cp = hal.getProcessor();
+        long[] prevTicks = cp.getSystemCpuLoadTicks();
+        Util.sleep(2000);
+        Double valorCpu = cp.getSystemCpuLoadBetweenTicks(prevTicks) * 100;
+        Integer valorCpuNumber = valorCpu.intValue();
+        pgbCpu.setValue(valorCpuNumber);
+        pgbCpu.setMinimum(0);
+        pgbCpu.setMaximum(100);
+        
+        FileSystem fileSystem = os.getFileSystem();
+        OSFileStore[] fsArray = fileSystem.getFileStores();
+        Double hdUsando = 0.0;
+        for (OSFileStore fs : fsArray) {
+            long usable = fs.getUsableSpace();
+            long total = fs.getTotalSpace();
+            hdUsando = (100 - (100d * usable / total));
+        };
+        Integer discoUsando = hdUsando.intValue();
+        pgbDisco.setValue(discoUsando);
+        pgbDisco.setMinimum(0);
+        pgbDisco.setMaximum(100);
+        
+        GlobalMemory memory = hal.getMemory();
+        this.ramTotal = FormatUtil.formatBytes(memory.getTotal());
+        long tot = memory.getTotal();
+        long disp = memory.getAvailable();
+        Double ramDisp = (100 - (100d * disp / tot));
+        Integer ramDispon = ramDisp.intValue();
+        pgbRam.setValue(ramDispon);
+        pgbRam.setMinimum(0);
+        pgbRam.setMaximum(100);
     }//GEN-LAST:event_jLabel11MousePressed
-
+      
+    
     /**
      * @param args the command line arguments
      */
@@ -944,10 +996,8 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
     private javax.swing.JPanel btn_4;
-    private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
     private javax.swing.JPanel ind_4;
     private javax.swing.JLabel jLabel1;
@@ -964,13 +1014,13 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -980,6 +1030,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jp_hardware;
     private javax.swing.JPanel jp_processos;
     private javax.swing.JPanel jp_recursos;
+    private javax.swing.JLabel lblDisco;
+    private javax.swing.JLabel lblLabelProcessos;
+    private javax.swing.JLabel lblMemoria;
+    private javax.swing.JLabel lblProcessos;
+    private javax.swing.JLabel lblUsoCpu;
+    private javax.swing.JLabel lblUsoMemoria;
     private javax.swing.JLabel lbl_arq;
     private javax.swing.JLabel lbl_family;
     private javax.swing.JLabel lbl_freq;
@@ -993,6 +1049,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_vel;
     private javax.swing.JLabel lbl_version;
     private javax.swing.JLabel lbl_volt;
+    private javax.swing.JProgressBar pgbCpu;
+    private javax.swing.JProgressBar pgbDisco;
+    private javax.swing.JProgressBar pgbRam;
     private javax.swing.JPanel side_pane;
     // End of variables declaration//GEN-END:variables
 }
