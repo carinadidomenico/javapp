@@ -1,0 +1,11 @@
+18/06/2020 18:54:33 | Iniciando conexão com o Banco de Dados
+18/06/2020 18:54:33 | Conectado Com o Banco De Dados
+18/06/2020 18:54:37 | Iniciando Monitoramento de Dados...
+18/06/2020 18:54:39 | Insert Dados Fixos
+18/06/2020 18:54:39 | Inserindo Dados Fixos da maquina no banco de Dados
+18/06/2020 18:54:44 | Iniciando a aba Processos
+18/06/2020 18:54:44 | Iniciando conexão com o Banco de Dados
+18/06/2020 18:54:44 | Conectado Com o Banco De Dados
+18/06/2020 18:54:44 | Iniciando Monitoramento de Dados...
+18/06/2020 18:54:44 | Insert Dados Fixos
+18/06/2020 18:54:44 | Inserindo Dados Fixos da maquina no banco de Dados

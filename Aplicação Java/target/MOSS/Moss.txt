@@ -1,0 +1,3 @@
+18/06/2020 18:55:28 | Iniciando conexão com o Banco de Dados
+18/06/2020 18:55:28 | Conectado Com o Banco De Dados
+18/06/2020 18:55:31 | Iniciando Monitoramento de Dados...

@@ -12,6 +12,7 @@
             <url>file:${project.basedir}/lib</url>
         </repository>
     </repositories>
+
     <build>
 
         <plugins>
@@ -60,6 +61,7 @@
 
                   </execution>
 
+
                 </executions>
 
             </plugin>
@@ -67,6 +69,7 @@
         </plugins>
 
     </build>
+
     <dependencies>
         <dependency>
             <groupId>unknown.binary</groupId>
@@ -88,7 +91,7 @@
             <artifactId>oshi-core</artifactId>
             <version>4.6.0</version>
         </dependency>
-          <!-- dependências do spring jdbc -->
+        <!-- dependências do spring jdbc -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -99,7 +102,7 @@
             <artifactId>commons-dbcp2</artifactId>
             <version>2.5.0</version>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.13</version>

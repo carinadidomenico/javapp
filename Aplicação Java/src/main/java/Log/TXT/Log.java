@@ -21,7 +21,7 @@ public class Log {
     
     private static void verifyExistence(File arquivo) {
        
-    File directory = new File ("C:/Users/Aluno/Desktop/MOSS");
+    File directory = new File ("./MOSS");
     boolean drExists = directory.exists();
     boolean arqExists = arquivo.exists();
  
@@ -48,7 +48,7 @@ public class Log {
 public static void writeLog(String Message) {
     
     try{
-        File arquivo = new File("C:/Users/Aluno/Desktop/MOSS/Moss.txt");
+        File arquivo = new File("./MOSS/Moss.txt");
        
         Format formater = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date data = new Date();

@@ -854,7 +854,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_3);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_4}, new JPanel[]{ind_2, ind_4});
+        resetColor(new JPanel[]{btn_4}, new JPanel[]{ind_4});
         panelsVisibility(2);
     }//GEN-LAST:event_btn_3MousePressed
 
@@ -862,7 +862,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_4);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
+        resetColor(new JPanel[]{btn_3}, new JPanel[]{ind_3});
         panelsVisibility(3);
     }//GEN-LAST:event_btn_4MousePressed
 
@@ -870,7 +870,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_3);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_4}, new JPanel[]{ind_2, ind_4});
+        resetColor(new JPanel[]{btn_4}, new JPanel[]{ind_4});
         panelsVisibility(2);
     }//GEN-LAST:event_jLabel10MouseClicked
 
@@ -878,7 +878,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_4);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
+        resetColor(new JPanel[]{btn_3}, new JPanel[]{ind_3});
         panelsVisibility(3);
         Log.writeLog("Iniciando a aba Processos");
         Dashboard att = new Dashboard();
