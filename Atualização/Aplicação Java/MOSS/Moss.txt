@@ -1,0 +1,635 @@
+18/06/2020 18:54:33 | Iniciando conex√£o com o Banco de Dados
+18/06/2020 18:54:33 | Conectado Com o Banco De Dados
+18/06/2020 18:54:37 | Iniciando Monitoramento de Dados...
+18/06/2020 18:54:39 | Insert Dados Fixos
+18/06/2020 18:54:39 | Inserindo Dados Fixos da maquina no banco de Dados
+18/06/2020 18:54:44 | Iniciando a aba Processos
+18/06/2020 18:54:44 | Iniciando conex√£o com o Banco de Dados
+18/06/2020 18:54:44 | Conectado Com o Banco De Dados
+18/06/2020 18:54:44 | Iniciando Monitoramento de Dados...
+18/06/2020 18:54:44 | Insert Dados Fixos
+18/06/2020 18:54:44 | Inserindo Dados Fixos da maquina no banco de Dados
+18/06/2020 22:23:09 | Iniciando conex„o com o Banco de Dados
+18/06/2020 22:23:09 | Conectado Com o Banco De Dados
+18/06/2020 22:23:11 | Iniciando Monitoramento de Dados...
+18/06/2020 22:23:14 | Insert Dados Fixos
+18/06/2020 22:23:14 | Inserindo Dados Fixos da maquina no banco de Dados
+18/06/2020 22:24:41 | Iniciando conex„o com o Banco de Dados
+18/06/2020 22:24:41 | Conectado Com o Banco De Dados
+18/06/2020 22:24:42 | Iniciando Monitoramento de Dados...
+18/06/2020 22:24:46 | Insert Dados Fixos
+18/06/2020 22:24:46 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:34:17 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:34:17 | Conectado Com o Banco De Dados
+19/06/2020 11:34:20 | Iniciando Monitoramento de Dados...
+19/06/2020 11:34:26 | Insert Dados Fixos
+19/06/2020 11:34:26 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:36:00 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:36:00 | Conectado Com o Banco De Dados
+19/06/2020 11:36:04 | Iniciando Monitoramento de Dados...
+19/06/2020 11:36:10 | Insert Dados Fixos
+19/06/2020 11:36:10 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:37:42 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:37:42 | Conectado Com o Banco De Dados
+19/06/2020 11:37:44 | Iniciando Monitoramento de Dados...
+19/06/2020 11:37:49 | Insert Dados Fixos
+19/06/2020 11:37:49 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:41:35 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:41:35 | Conectado Com o Banco De Dados
+19/06/2020 11:41:37 | Iniciando Monitoramento de Dados...
+19/06/2020 11:41:43 | Insert Dados Fixos
+19/06/2020 11:41:43 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:42:56 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:42:56 | Conectado Com o Banco De Dados
+19/06/2020 11:42:58 | Iniciando Monitoramento de Dados...
+19/06/2020 11:43:04 | Insert Dados Fixos
+19/06/2020 11:43:04 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:45:06 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:45:06 | Conectado Com o Banco De Dados
+19/06/2020 11:45:09 | Iniciando Monitoramento de Dados...
+19/06/2020 11:45:15 | Insert Dados Fixos
+19/06/2020 11:45:15 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:47:53 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:47:53 | Conectado Com o Banco De Dados
+19/06/2020 11:47:56 | Iniciando Monitoramento de Dados...
+19/06/2020 11:48:02 | Insert Dados Fixos
+19/06/2020 11:48:02 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:49:15 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:49:15 | Conectado Com o Banco De Dados
+19/06/2020 11:49:19 | Iniciando Monitoramento de Dados...
+19/06/2020 11:49:25 | Insert Dados Fixos
+19/06/2020 11:49:25 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:51:03 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:51:03 | Conectado Com o Banco De Dados
+19/06/2020 11:51:06 | Iniciando Monitoramento de Dados...
+19/06/2020 11:51:12 | Insert Dados Fixos
+19/06/2020 11:51:12 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:52:45 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:52:45 | Conectado Com o Banco De Dados
+19/06/2020 11:52:48 | Iniciando Monitoramento de Dados...
+19/06/2020 11:52:55 | Insert Dados Fixos
+19/06/2020 11:52:55 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 11:57:20 | Iniciando conex„o com o Banco de Dados
+19/06/2020 11:57:20 | Conectado Com o Banco De Dados
+19/06/2020 11:57:22 | Iniciando Monitoramento de Dados...
+19/06/2020 11:57:29 | Insert Dados Fixos
+19/06/2020 11:57:29 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 12:06:02 | Iniciando conex„o com o Banco de Dados
+19/06/2020 12:06:02 | Conectado Com o Banco De Dados
+19/06/2020 12:06:06 | Iniciando Monitoramento de Dados...
+19/06/2020 12:06:15 | Insert Dados Fixos
+19/06/2020 12:06:15 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 12:09:03 | Iniciando conex„o com o Banco de Dados
+19/06/2020 12:09:03 | Conectado Com o Banco De Dados
+19/06/2020 12:09:07 | Iniciando Monitoramento de Dados...
+19/06/2020 12:09:15 | Insert Dados Fixos
+19/06/2020 12:09:15 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 12:11:56 | Iniciando conex„o com o Banco de Dados
+19/06/2020 12:11:56 | Conectado Com o Banco De Dados
+19/06/2020 12:12:01 | Iniciando Monitoramento de Dados...
+19/06/2020 12:12:07 | Insert Dados Fixos
+19/06/2020 12:12:07 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 12:19:42 | Iniciando conex„o com o Banco de Dados
+19/06/2020 12:19:42 | Conectado Com o Banco De Dados
+19/06/2020 12:19:45 | Iniciando Monitoramento de Dados...
+19/06/2020 12:19:53 | Insert Dados Fixos
+19/06/2020 12:19:53 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:38:32 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:38:32 | Conectado Com o Banco De Dados
+19/06/2020 13:38:34 | Iniciando Monitoramento de Dados...
+19/06/2020 13:38:39 | Insert Dados Fixos
+19/06/2020 13:38:39 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:42:44 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:42:44 | Conectado Com o Banco De Dados
+19/06/2020 13:42:47 | Iniciando Monitoramento de Dados...
+19/06/2020 13:42:53 | Insert Dados Fixos
+19/06/2020 13:42:53 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:43:26 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:43:26 | Conectado Com o Banco De Dados
+19/06/2020 13:43:29 | Iniciando Monitoramento de Dados...
+19/06/2020 13:43:34 | Insert Dados Fixos
+19/06/2020 13:43:34 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:45:25 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:45:25 | Conectado Com o Banco De Dados
+19/06/2020 13:45:27 | Iniciando Monitoramento de Dados...
+19/06/2020 13:45:32 | Insert Dados Fixos
+19/06/2020 13:45:32 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:46:48 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:46:48 | Conectado Com o Banco De Dados
+19/06/2020 13:46:50 | Iniciando Monitoramento de Dados...
+19/06/2020 13:46:55 | Insert Dados Fixos
+19/06/2020 13:46:55 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:49:14 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:49:14 | Conectado Com o Banco De Dados
+19/06/2020 13:49:15 | Iniciando Monitoramento de Dados...
+19/06/2020 13:49:20 | Insert Dados Fixos
+19/06/2020 13:49:20 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:50:10 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:50:10 | Conectado Com o Banco De Dados
+19/06/2020 13:50:11 | Iniciando Monitoramento de Dados...
+19/06/2020 13:50:15 | Insert Dados Fixos
+19/06/2020 13:50:15 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:52:00 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:52:00 | Conectado Com o Banco De Dados
+19/06/2020 13:52:02 | Iniciando Monitoramento de Dados...
+19/06/2020 13:52:06 | Insert Dados Fixos
+19/06/2020 13:52:06 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 13:59:59 | Iniciando conex„o com o Banco de Dados
+19/06/2020 13:59:59 | Conectado Com o Banco De Dados
+19/06/2020 14:00:00 | Iniciando Monitoramento de Dados...
+19/06/2020 14:00:04 | Insert Dados Fixos
+19/06/2020 14:00:04 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:06:41 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:06:41 | Conectado Com o Banco De Dados
+19/06/2020 14:06:44 | Iniciando Monitoramento de Dados...
+19/06/2020 14:06:49 | Insert Dados Fixos
+19/06/2020 14:06:49 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:12:25 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:12:25 | Conectado Com o Banco De Dados
+19/06/2020 14:12:27 | Iniciando Monitoramento de Dados...
+19/06/2020 14:12:31 | Insert Dados Fixos
+19/06/2020 14:12:31 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:24:31 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:24:31 | Conectado Com o Banco De Dados
+19/06/2020 14:24:35 | Iniciando Monitoramento de Dados...
+19/06/2020 14:24:43 | Insert Dados Fixos
+19/06/2020 14:24:43 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:21 | Iniciando a aba Processos
+19/06/2020 14:25:21 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:21 | Conectado Com o Banco De Dados
+19/06/2020 14:25:21 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:23 | Insert Dados Fixos
+19/06/2020 14:25:23 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:28 | Iniciando a aba Processos
+19/06/2020 14:25:28 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:28 | Conectado Com o Banco De Dados
+19/06/2020 14:25:28 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:29 | Insert Dados Fixos
+19/06/2020 14:25:29 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:34 | Iniciando a aba Processos
+19/06/2020 14:25:34 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:34 | Conectado Com o Banco De Dados
+19/06/2020 14:25:34 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:34 | Insert Dados Fixos
+19/06/2020 14:25:34 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:39 | Iniciando a aba Processos
+19/06/2020 14:25:39 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:39 | Conectado Com o Banco De Dados
+19/06/2020 14:25:39 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:40 | Insert Dados Fixos
+19/06/2020 14:25:40 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:45 | Iniciando a aba Processos
+19/06/2020 14:25:45 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:45 | Conectado Com o Banco De Dados
+19/06/2020 14:25:45 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:46 | Insert Dados Fixos
+19/06/2020 14:25:46 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:50 | Iniciando a aba Processos
+19/06/2020 14:25:50 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:50 | Conectado Com o Banco De Dados
+19/06/2020 14:25:50 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:51 | Insert Dados Fixos
+19/06/2020 14:25:51 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:25:56 | Iniciando a aba Processos
+19/06/2020 14:25:56 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:25:56 | Conectado Com o Banco De Dados
+19/06/2020 14:25:56 | Iniciando Monitoramento de Dados...
+19/06/2020 14:25:57 | Insert Dados Fixos
+19/06/2020 14:25:57 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:26:02 | Iniciando a aba Processos
+19/06/2020 14:26:02 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:26:02 | Conectado Com o Banco De Dados
+19/06/2020 14:26:02 | Iniciando Monitoramento de Dados...
+19/06/2020 14:26:03 | Insert Dados Fixos
+19/06/2020 14:26:03 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:26:08 | Iniciando a aba Processos
+19/06/2020 14:26:08 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:26:08 | Conectado Com o Banco De Dados
+19/06/2020 14:26:08 | Iniciando Monitoramento de Dados...
+19/06/2020 14:26:09 | Insert Dados Fixos
+19/06/2020 14:26:09 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:28:48 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:28:48 | Conectado Com o Banco De Dados
+19/06/2020 14:28:51 | Iniciando Monitoramento de Dados...
+19/06/2020 14:29:00 | Insert Dados Fixos
+19/06/2020 14:29:00 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:29:55 | Iniciando a aba Processos
+19/06/2020 14:29:55 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:29:55 | Conectado Com o Banco De Dados
+19/06/2020 14:29:55 | Iniciando Monitoramento de Dados...
+19/06/2020 14:29:56 | Insert Dados Fixos
+19/06/2020 14:29:56 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:30:02 | Iniciando a aba Processos
+19/06/2020 14:30:02 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:30:02 | Conectado Com o Banco De Dados
+19/06/2020 14:30:02 | Iniciando Monitoramento de Dados...
+19/06/2020 14:30:03 | Insert Dados Fixos
+19/06/2020 14:30:03 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:30:08 | Iniciando a aba Processos
+19/06/2020 14:30:08 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:30:08 | Conectado Com o Banco De Dados
+19/06/2020 14:30:08 | Iniciando Monitoramento de Dados...
+19/06/2020 14:30:09 | Insert Dados Fixos
+19/06/2020 14:30:09 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:30:14 | Iniciando a aba Processos
+19/06/2020 14:30:14 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:30:14 | Conectado Com o Banco De Dados
+19/06/2020 14:30:14 | Iniciando Monitoramento de Dados...
+19/06/2020 14:30:15 | Insert Dados Fixos
+19/06/2020 14:30:15 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:30:20 | Iniciando a aba Processos
+19/06/2020 14:30:20 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:30:20 | Conectado Com o Banco De Dados
+19/06/2020 14:30:20 | Iniciando Monitoramento de Dados...
+19/06/2020 14:30:21 | Insert Dados Fixos
+19/06/2020 14:30:21 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 14:59:10 | Iniciando conex„o com o Banco de Dados
+19/06/2020 14:59:10 | Conectado Com o Banco De Dados
+19/06/2020 14:59:17 | Iniciando Monitoramento de Dados...
+19/06/2020 14:59:34 | Insert Dados Fixos
+19/06/2020 14:59:34 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:00:09 | Iniciando a aba Processos
+19/06/2020 15:00:09 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:00:09 | Conectado Com o Banco De Dados
+19/06/2020 15:00:09 | Iniciando Monitoramento de Dados...
+19/06/2020 15:00:11 | Insert Dados Fixos
+19/06/2020 15:00:11 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:00:16 | Iniciando a aba Processos
+19/06/2020 15:00:17 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:00:17 | Conectado Com o Banco De Dados
+19/06/2020 15:00:17 | Iniciando Monitoramento de Dados...
+19/06/2020 15:00:19 | Insert Dados Fixos
+19/06/2020 15:00:19 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:00:24 | Iniciando a aba Processos
+19/06/2020 15:00:24 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:00:24 | Conectado Com o Banco De Dados
+19/06/2020 15:00:24 | Iniciando Monitoramento de Dados...
+19/06/2020 15:00:26 | Insert Dados Fixos
+19/06/2020 15:00:26 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:00:31 | Iniciando a aba Processos
+19/06/2020 15:00:31 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:00:31 | Conectado Com o Banco De Dados
+19/06/2020 15:00:31 | Iniciando Monitoramento de Dados...
+19/06/2020 15:00:33 | Insert Dados Fixos
+19/06/2020 15:00:33 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:00:39 | Iniciando a aba Processos
+19/06/2020 15:00:39 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:00:39 | Conectado Com o Banco De Dados
+19/06/2020 15:00:39 | Iniciando Monitoramento de Dados...
+19/06/2020 15:00:41 | Insert Dados Fixos
+19/06/2020 15:00:41 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:09:31 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:09:31 | Conectado Com o Banco De Dados
+19/06/2020 15:09:36 | Iniciando Monitoramento de Dados...
+19/06/2020 15:09:46 | Insert Dados Fixos
+19/06/2020 15:09:46 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:10:26 | Iniciando a aba Processos
+19/06/2020 15:10:28 | Iniciando a aba Processos
+19/06/2020 15:10:31 | Iniciando a aba Processos
+19/06/2020 15:10:33 | Iniciando a aba Processos
+19/06/2020 15:10:35 | Iniciando a aba Processos
+19/06/2020 15:10:38 | Iniciando a aba Processos
+19/06/2020 15:10:40 | Iniciando a aba Processos
+19/06/2020 15:10:42 | Iniciando a aba Processos
+19/06/2020 15:10:45 | Iniciando a aba Processos
+19/06/2020 15:10:47 | Iniciando a aba Processos
+19/06/2020 15:10:49 | Iniciando a aba Processos
+19/06/2020 15:10:52 | Iniciando a aba Processos
+19/06/2020 15:10:54 | Iniciando a aba Processos
+19/06/2020 15:10:56 | Iniciando a aba Processos
+19/06/2020 15:10:58 | Iniciando a aba Processos
+19/06/2020 15:11:01 | Iniciando a aba Processos
+19/06/2020 15:11:03 | Iniciando a aba Processos
+19/06/2020 15:11:05 | Iniciando a aba Processos
+19/06/2020 15:11:07 | Iniciando a aba Processos
+19/06/2020 15:11:10 | Iniciando a aba Processos
+19/06/2020 15:11:12 | Iniciando a aba Processos
+19/06/2020 15:11:14 | Iniciando a aba Processos
+19/06/2020 15:11:16 | Iniciando a aba Processos
+19/06/2020 15:11:19 | Iniciando a aba Processos
+19/06/2020 15:11:21 | Iniciando a aba Processos
+19/06/2020 15:11:23 | Iniciando a aba Processos
+19/06/2020 15:11:26 | Iniciando a aba Processos
+19/06/2020 15:14:10 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:14:10 | Conectado Com o Banco De Dados
+19/06/2020 15:14:13 | Iniciando Monitoramento de Dados...
+19/06/2020 15:14:22 | Insert Dados Fixos
+19/06/2020 15:14:22 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:15:37 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:15:37 | Conectado Com o Banco De Dados
+19/06/2020 15:15:41 | Iniciando Monitoramento de Dados...
+19/06/2020 15:15:50 | Insert Dados Fixos
+19/06/2020 15:15:50 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:16:08 | Iniciando a aba Processos
+19/06/2020 15:16:10 | Iniciando a aba Processos
+19/06/2020 15:16:12 | Iniciando a aba Processos
+19/06/2020 15:16:14 | Iniciando a aba Processos
+19/06/2020 15:16:16 | Iniciando a aba Processos
+19/06/2020 15:16:18 | Iniciando a aba Processos
+19/06/2020 15:16:21 | Iniciando a aba Processos
+19/06/2020 15:16:23 | Iniciando a aba Processos
+19/06/2020 15:16:25 | Iniciando a aba Processos
+19/06/2020 15:16:27 | Iniciando a aba Processos
+19/06/2020 15:16:29 | Iniciando a aba Processos
+19/06/2020 15:16:31 | Iniciando a aba Processos
+19/06/2020 15:16:33 | Iniciando a aba Processos
+19/06/2020 15:16:36 | Iniciando a aba Processos
+19/06/2020 15:16:38 | Iniciando a aba Processos
+19/06/2020 15:16:40 | Iniciando a aba Processos
+19/06/2020 15:16:42 | Iniciando a aba Processos
+19/06/2020 15:16:44 | Iniciando a aba Processos
+19/06/2020 15:16:46 | Iniciando a aba Processos
+19/06/2020 15:16:48 | Iniciando a aba Processos
+19/06/2020 15:16:51 | Iniciando a aba Processos
+19/06/2020 15:16:53 | Iniciando a aba Processos
+19/06/2020 15:16:55 | Iniciando a aba Processos
+19/06/2020 15:16:57 | Iniciando a aba Processos
+19/06/2020 15:16:59 | Iniciando a aba Processos
+19/06/2020 15:19:50 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:19:50 | Conectado Com o Banco De Dados
+19/06/2020 15:19:55 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:03 | Insert Dados Fixos
+19/06/2020 15:20:03 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:08 | Iniciando a aba Processos
+19/06/2020 15:20:08 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:08 | Conectado Com o Banco De Dados
+19/06/2020 15:20:08 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:09 | Insert Dados Fixos
+19/06/2020 15:20:09 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:17 | Iniciando a aba Processos
+19/06/2020 15:20:17 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:17 | Conectado Com o Banco De Dados
+19/06/2020 15:20:17 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:18 | Insert Dados Fixos
+19/06/2020 15:20:18 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:23 | Iniciando a aba Processos
+19/06/2020 15:20:23 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:23 | Conectado Com o Banco De Dados
+19/06/2020 15:20:23 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:24 | Insert Dados Fixos
+19/06/2020 15:20:24 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:28 | Iniciando a aba Processos
+19/06/2020 15:20:28 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:28 | Conectado Com o Banco De Dados
+19/06/2020 15:20:28 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:29 | Insert Dados Fixos
+19/06/2020 15:20:29 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:34 | Iniciando a aba Processos
+19/06/2020 15:20:34 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:34 | Conectado Com o Banco De Dados
+19/06/2020 15:20:34 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:34 | Insert Dados Fixos
+19/06/2020 15:20:34 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:39 | Iniciando a aba Processos
+19/06/2020 15:20:39 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:39 | Conectado Com o Banco De Dados
+19/06/2020 15:20:39 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:39 | Insert Dados Fixos
+19/06/2020 15:20:39 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:44 | Iniciando a aba Processos
+19/06/2020 15:20:44 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:44 | Conectado Com o Banco De Dados
+19/06/2020 15:20:44 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:44 | Insert Dados Fixos
+19/06/2020 15:20:44 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:49 | Iniciando a aba Processos
+19/06/2020 15:20:49 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:49 | Conectado Com o Banco De Dados
+19/06/2020 15:20:49 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:49 | Insert Dados Fixos
+19/06/2020 15:20:49 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:20:54 | Iniciando a aba Processos
+19/06/2020 15:20:54 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:20:54 | Conectado Com o Banco De Dados
+19/06/2020 15:20:54 | Iniciando Monitoramento de Dados...
+19/06/2020 15:20:54 | Insert Dados Fixos
+19/06/2020 15:20:54 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:56:55 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:56:55 | Conectado Com o Banco De Dados
+19/06/2020 15:56:57 | Iniciando Monitoramento de Dados...
+19/06/2020 15:57:02 | Insert Dados Fixos
+19/06/2020 15:57:02 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:58:44 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:58:44 | Conectado Com o Banco De Dados
+19/06/2020 15:58:47 | Iniciando Monitoramento de Dados...
+19/06/2020 15:58:52 | Insert Dados Fixos
+19/06/2020 15:58:52 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:58:58 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:58:58 | Conectado Com o Banco De Dados
+19/06/2020 15:58:58 | Iniciando Monitoramento de Dados...
+19/06/2020 15:58:59 | Insert Dados Fixos
+19/06/2020 15:58:59 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:01 | Insert Dados Fixos
+19/06/2020 15:59:01 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:04 | Iniciando a aba Processos
+19/06/2020 15:59:04 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:04 | Conectado Com o Banco De Dados
+19/06/2020 15:59:04 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:04 | Conectado Com o Banco De Dados
+19/06/2020 15:59:04 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:04 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:05 | Insert Dados Fixos
+19/06/2020 15:59:05 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:05 | Insert Dados Fixos
+19/06/2020 15:59:05 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:08 | Insert Dados Fixos
+19/06/2020 15:59:08 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:08 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:08 | Conectado Com o Banco De Dados
+19/06/2020 15:59:08 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:09 | Insert Dados Fixos
+19/06/2020 15:59:09 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:10 | Iniciando a aba Processos
+19/06/2020 15:59:10 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:10 | Conectado Com o Banco De Dados
+19/06/2020 15:59:10 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:10 | Insert Dados Fixos
+19/06/2020 15:59:10 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:11 | Insert Dados Fixos
+19/06/2020 15:59:11 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:12 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:12 | Conectado Com o Banco De Dados
+19/06/2020 15:59:12 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:12 | Insert Dados Fixos
+19/06/2020 15:59:12 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:14 | Insert Dados Fixos
+19/06/2020 15:59:14 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:15 | Iniciando a aba Processos
+19/06/2020 15:59:15 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:15 | Conectado Com o Banco De Dados
+19/06/2020 15:59:15 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:15 | Insert Dados Fixos
+19/06/2020 15:59:15 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:15 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:15 | Conectado Com o Banco De Dados
+19/06/2020 15:59:15 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:16 | Insert Dados Fixos
+19/06/2020 15:59:16 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:18 | Insert Dados Fixos
+19/06/2020 15:59:18 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:20 | Iniciando a aba Processos
+19/06/2020 15:59:20 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:20 | Conectado Com o Banco De Dados
+19/06/2020 15:59:20 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:21 | Insert Dados Fixos
+19/06/2020 15:59:21 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:25 | Iniciando a aba Processos
+19/06/2020 15:59:25 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:25 | Conectado Com o Banco De Dados
+19/06/2020 15:59:26 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:26 | Insert Dados Fixos
+19/06/2020 15:59:26 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:31 | Iniciando a aba Processos
+19/06/2020 15:59:31 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:31 | Conectado Com o Banco De Dados
+19/06/2020 15:59:31 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:31 | Insert Dados Fixos
+19/06/2020 15:59:31 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:35 | Iniciando a aba Processos
+19/06/2020 15:59:35 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:35 | Conectado Com o Banco De Dados
+19/06/2020 15:59:35 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:37 | Insert Dados Fixos
+19/06/2020 15:59:37 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:41 | Iniciando a aba Processos
+19/06/2020 15:59:41 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:41 | Conectado Com o Banco De Dados
+19/06/2020 15:59:41 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:42 | Insert Dados Fixos
+19/06/2020 15:59:42 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:46 | Iniciando a aba Processos
+19/06/2020 15:59:46 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:46 | Conectado Com o Banco De Dados
+19/06/2020 15:59:46 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:48 | Insert Dados Fixos
+19/06/2020 15:59:48 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 15:59:53 | Iniciando a aba Processos
+19/06/2020 15:59:53 | Iniciando conex„o com o Banco de Dados
+19/06/2020 15:59:53 | Conectado Com o Banco De Dados
+19/06/2020 15:59:53 | Iniciando Monitoramento de Dados...
+19/06/2020 15:59:56 | Insert Dados Fixos
+19/06/2020 15:59:56 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:01 | Iniciando a aba Processos
+19/06/2020 16:00:01 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:01 | Conectado Com o Banco De Dados
+19/06/2020 16:00:01 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:06 | Insert Dados Fixos
+19/06/2020 16:00:06 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:11 | Iniciando a aba Processos
+19/06/2020 16:00:11 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:11 | Conectado Com o Banco De Dados
+19/06/2020 16:00:11 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:11 | Insert Dados Fixos
+19/06/2020 16:00:11 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:16 | Iniciando a aba Processos
+19/06/2020 16:00:16 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:16 | Conectado Com o Banco De Dados
+19/06/2020 16:00:16 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:17 | Insert Dados Fixos
+19/06/2020 16:00:17 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:22 | Iniciando a aba Processos
+19/06/2020 16:00:22 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:22 | Conectado Com o Banco De Dados
+19/06/2020 16:00:22 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:25 | Insert Dados Fixos
+19/06/2020 16:00:25 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:29 | Iniciando a aba Processos
+19/06/2020 16:00:29 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:29 | Conectado Com o Banco De Dados
+19/06/2020 16:00:29 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:32 | Insert Dados Fixos
+19/06/2020 16:00:32 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:37 | Iniciando a aba Processos
+19/06/2020 16:00:37 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:37 | Conectado Com o Banco De Dados
+19/06/2020 16:00:37 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:39 | Insert Dados Fixos
+19/06/2020 16:00:39 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:44 | Iniciando a aba Processos
+19/06/2020 16:00:44 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:44 | Conectado Com o Banco De Dados
+19/06/2020 16:00:44 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:45 | Insert Dados Fixos
+19/06/2020 16:00:45 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:50 | Iniciando a aba Processos
+19/06/2020 16:00:50 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:50 | Conectado Com o Banco De Dados
+19/06/2020 16:00:50 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:51 | Insert Dados Fixos
+19/06/2020 16:00:51 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:00:55 | Iniciando a aba Processos
+19/06/2020 16:00:55 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:00:55 | Conectado Com o Banco De Dados
+19/06/2020 16:00:55 | Iniciando Monitoramento de Dados...
+19/06/2020 16:00:57 | Insert Dados Fixos
+19/06/2020 16:00:57 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:02 | Iniciando a aba Processos
+19/06/2020 16:01:02 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:02 | Conectado Com o Banco De Dados
+19/06/2020 16:01:02 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:05 | Insert Dados Fixos
+19/06/2020 16:01:05 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:09 | Iniciando a aba Processos
+19/06/2020 16:01:09 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:09 | Conectado Com o Banco De Dados
+19/06/2020 16:01:10 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:11 | Insert Dados Fixos
+19/06/2020 16:01:11 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:15 | Iniciando a aba Processos
+19/06/2020 16:01:15 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:15 | Conectado Com o Banco De Dados
+19/06/2020 16:01:15 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:17 | Insert Dados Fixos
+19/06/2020 16:01:17 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:22 | Iniciando a aba Processos
+19/06/2020 16:01:22 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:22 | Conectado Com o Banco De Dados
+19/06/2020 16:01:22 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:23 | Insert Dados Fixos
+19/06/2020 16:01:23 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:27 | Iniciando a aba Processos
+19/06/2020 16:01:28 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:28 | Conectado Com o Banco De Dados
+19/06/2020 16:01:28 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:29 | Insert Dados Fixos
+19/06/2020 16:01:29 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:33 | Iniciando a aba Processos
+19/06/2020 16:01:33 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:33 | Conectado Com o Banco De Dados
+19/06/2020 16:01:33 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:35 | Insert Dados Fixos
+19/06/2020 16:01:35 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:01:40 | Iniciando a aba Processos
+19/06/2020 16:01:40 | Iniciando conex„o com o Banco de Dados
+19/06/2020 16:01:40 | Conectado Com o Banco De Dados
+19/06/2020 16:01:40 | Iniciando Monitoramento de Dados...
+19/06/2020 16:01:41 | Insert Dados Fixos
+19/06/2020 16:01:41 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:42:23 | Iniciando conex√£o com o Banco de Dados
+19/06/2020 16:42:23 | Conectado Com o Banco De Dados
+19/06/2020 16:42:27 | Iniciando Monitoramento de Dados...
+19/06/2020 16:42:28 | Insert Dados Fixos
+19/06/2020 16:42:28 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:42:31 | Iniciando conex√£o com o Banco de Dados
+19/06/2020 16:42:31 | Conectado Com o Banco De Dados
+19/06/2020 16:42:31 | Iniciando Monitoramento de Dados...
+19/06/2020 16:42:32 | Insert Dados Fixos
+19/06/2020 16:42:32 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:42:34 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:42:42 | Iniciando a aba Processos
+19/06/2020 16:42:42 | Iniciando conex√£o com o Banco de Dados
+19/06/2020 16:42:42 | Conectado Com o Banco De Dados
+19/06/2020 16:42:42 | Iniciando Monitoramento de Dados...
+19/06/2020 16:42:43 | Insert Dados Fixos
+19/06/2020 16:42:43 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:42:47 | Insert na tabela Dados Monitora√ß√£o
+19/06/2020 16:42:53 | Iniciando a aba Processos
+19/06/2020 16:42:53 | Iniciando conex√£o com o Banco de Dados
+19/06/2020 16:42:53 | Conectado Com o Banco De Dados
+19/06/2020 16:42:53 | Iniciando Monitoramento de Dados...
+19/06/2020 16:42:53 | Insert Dados Fixos
+19/06/2020 16:42:53 | Inserindo Dados Fixos da maquina no banco de Dados
+19/06/2020 16:42:57 | Insert na tabela Dados Monitora√ß√£o
+19/06/2020 16:42:58 | Iniciando a aba Processos
+19/06/2020 16:42:58 | Iniciando conex√£o com o Banco de Dados
+19/06/2020 16:42:58 | Conectado Com o Banco De Dados
